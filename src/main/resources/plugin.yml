@@ -1,0 +1,26 @@
+name: AdvancedReports
+version: '1.0.0'
+main: com.italixcs.advancedreports.AdvancedReportsPlugin
+api-version: '1.21.11'
+description: GUI-based player reporting for Paper servers.
+author: Italixcs
+commands:
+  report:
+    description: Report a player.
+    usage: /report <player> [reason]
+  reports:
+    description: Open the staff report GUI.
+    usage: /reports
+permissions:
+  advancedreports.report:
+    description: Submit player reports.
+    default: true
+  advancedreports.view:
+    description: View report lists and receive report notifications.
+    default: op
+  advancedreports.actions:
+    description: Open report details, copy names, and use teleports.
+    default: op
+  advancedreports.delete:
+    description: Delete reports.
+    default: op
