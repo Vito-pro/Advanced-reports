@@ -126,8 +126,9 @@ public final class AdvancedReportsPlugin extends JavaPlugin implements Listener,
             return true;
         }
         if (!reason.isEmpty() && !getConfig().getBoolean("reasons.free", true)) {
+            final String inputReason = reason;
             String selected = getConfig().getStringList("reasons.presets").stream()
-                    .filter(option -> option.equalsIgnoreCase(reason)).findFirst().orElse(null);
+                    .filter(option -> option.equalsIgnoreCase(inputReason)).findFirst().orElse(null);
             if (selected == null) {
                 send(player, "invalid-reason", Map.of("reasons", String.join(", ",
                         getConfig().getStringList("reasons.presets").stream().map(this::smallCaps).toList())));
